@@ -1,0 +1,132 @@
+package com.pack;
+import java.io.*;
+public class Hands1 {
+
+	public static void main(String args[]) throws IOException
+	{
+		BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("Enter venue name");
+		String name=br.readLine();
+		System.out.println("Enter city name");
+		String name1=br.readLine();
+		
+	}
+}
+
+output:
+Enter venue name
+MA chidambaram stadium
+Enter city name
+chennai
+ 
+------------------------------------------------------------------
+
+class Cricket {
+	String name;
+	String country;
+	String skill;
+ }
+	
+public class Hands2{
+	public static void main(String[] args) {
+		 Crickt c = new Cricket();
+		 c.name="MS Dhoni";
+		 System.out.println("Player name:" + c.name);
+		 c.country="India";
+		 System.out.println("country: " + c.country);
+		 c.skill="All Rounder";
+		 System.out.println("Skill: " + c.skill);
+	}
+
+}
+output:
+Player name:MS Dhoni
+country: India
+Skill: All Rounder
+
+------------------------------------------------------------------------
+class Delivery{
+	long over;
+	long ball;
+	long runs;
+	String Batsman;
+	String Bowler;
+	String NonStriker;
+	
+	Delivery(){
+		over=1;
+		ball=1;
+		runs=4;
+		Batsman="MS Dhoni";
+		Bowler="Dale Steyn";
+		NonStriker="Suresh Raina";
+	}
+		void displayDeliveryDetails() {
+			
+		}
+		
+	}
+
+public class Hands3 {
+public static void main(String args[]) {
+	Delivery  d=new Delivery();
+	System.out.println("Delivery details: ");
+	System.out.println("over: " + d.runs );
+	System.out.println("ball: " + d.ball);
+	System.out.println("runs: " + d.runs);
+	System.out.println("Batsman: " + d.Batsman);
+	System.out.println("Bowler: "+ d.Bowler);
+	System.out.println("NonStriker: " +d.NonStriker);
+	
+	
+	}
+}
+
+Output:
+Delivery details: 
+over: 1
+ball: 1
+runs: 4
+Batsman: MS Dhoni
+Bowler: Dale Steyn
+NonStriker: Suresh Raina
+-----------------------------------------------
+
+
+package com.pack;
+import java.util.Scanner;
+
+class Cricketer{
+	String name;
+	String country;
+	String skill;
+	
+	
+	
+	void player() {
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter player name");
+	    String s1=s.next();
+	    String s2[]=s1.split(" ,");
+	    
+	    name=s2[0];
+	    country=s2[1];
+	    skill=s2[2];
+	}
+}
+
+public class Hands4 {
+ public static void main(String [] args) {
+	 Cricketer c=new Cricketer();
+	 c.player();
+	 System.out.println("player details");
+	 System.out.println("Player name: " + c.name);
+	 System.out.println("Country name: " + c.country);
+	 System.out.println("Skill: " +c.skill);
+	 
+ }
+}
+
+
+
+

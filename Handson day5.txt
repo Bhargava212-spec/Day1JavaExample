@@ -1,0 +1,291 @@
+package com.day5;
+
+import java.util.Scanner;
+
+class UserMainCode
+{
+boolean validateDate(String s)
+{
+char r=s.charAt(2);
+char r1=s.charAt(5);
+if(r=='-' && r1=='-')
+{
+return true;
+}
+else
+{
+return false;
+}
+}
+}
+public class Main1 {
+public static void main(String[] args) {
+UserMainCode u=new UserMainCode();
+Scanner s=new Scanner(System.in);
+String str;
+System.out.println("Enter date in string");
+str=s.nextLine();
+boolean str1=u.validateDate(str);
+if(str1==true)
+{
+System.out.println("Valid");
+}
+else
+{
+System.out.println("Invalid");
+}
+}
+}
+
+----------------------------------------------------------------------------------------
+package com.day5;
+import java.util.Scanner;
+class UserMainCode1
+{
+boolean validateDate(String s)
+
+{
+int l=s.length();
+       char r=s.charAt(0);
+char r1=s.charAt(1);
+char r2=s.charAt(l-1);
+char r3=s.charAt(l-2);
+if(((r>=65 && r<=90)||(r>=97 && r<=122))&&((r1>=65 && r1<=90)||(r1>=97 && r1<=122))&&((r2>=65 && r2<=90)||(r2>=97 && r2<=122))&&((r3>=65 && r3<=90)||(r3>=97 && r3<=122)))
+{
+return true;
+}
+
+else
+{
+return false;
+}
+}
+}
+
+public class Main2 {
+
+public static void main(String[] args) {
+UserMainCode1 u=new UserMainCode1();
+Scanner s=new Scanner(System.in);
+String str;
+System.out.println("Enter date in string");
+str=s.nextLine();
+boolean str1=u.validateDate(str);
+if(str1==true)
+{
+System.out.println("Valid");
+}
+else
+{
+System.out.println("Invalid");
+}
+}
+}
+-----------------------------------------------------------------------------------
+
+
+package com.day5;
+
+import java.util.Scanner;
+
+class UserMainCode3
+{
+boolean validateDate(String s)
+{
+int c1=0;
+char c[]=s.toCharArray();
+int l=s.length();
+for(int i=0;i<l;i++)
+{
+if(s.charAt(i)=='a')
+c1++;
+}
+int a=0,b=0;
+
+for(int i=0;i<l;i++)
+{
+if(i%2==0)
+{
+if('a'==c[i]&&'A'==c[i])
+{
+a=a+1;
+}
+if(c[i]!='a'&&c[i]!='A')
+{
+   b=b+1;
+}
+}
+}
+if(a==c1 && b==l)
+{
+return true;
+}
+else
+{
+return false;
+}
+
+}
+}
+public class Main5 {
+
+public static void main(String[] args) {
+UserMainCode3 u=new UserMainCode3();
+Scanner s=new Scanner(System.in);
+String str;
+str=s.nextLine();
+boolean str1=u.validateDate(str);
+if(str1==true)
+{
+System.out.println("Valid");
+}
+else
+{
+System.out.println("Invalid");
+}
+
+
+}
+
+}
+
+----------------------------------------------------------------------
+package com.practice;
+
+import java.util.Scanner;
+
+public class Validation1 {
+
+	public static void main(String[] args) {
+		try {
+			Scanner sc=new Scanner(System.in);
+			System.out.println("Enter the Number of over");
+			int overs=sc.nextInt();
+			int runs[]=new int[overs];
+			System.out.println("Enter the number of runs for each over");
+			for(int i=0;i<overs;i++) {
+				runs[i]=sc.nextInt();
+				
+			}
+			System.out.println("Enter the over number");
+			int number=sc.nextInt();
+			System.out.println(runs[number-1]);
+		}
+		catch(ArrayIndexOutOfBoundsException e) {
+			System.out.println(e);
+			
+		}
+		catch(NegativeArraySizeException e) {
+			System.out.println(e);
+		}
+
+	}
+
+}
+output1:
+Enter the Number of over
+1
+Enter the number of runs for each over
+10
+Enter the over number
+1
+10
+
+output2:
+Enter the Number of over
+3
+Enter the number of runs for each over
+10
+15
+12
+Enter the over number
+5
+java.lang.ArrayIndexOutOfBoundsException: Index 4 out of bounds for length 3
+
+-------------------------------------------------------------------------------------
+class CustomException extends Exception{
+	 int age;
+	String name;
+	
+	
+	public CustomException(int age,String name) {
+		super();
+		this.age= age;
+		this.name=name;
+		
+		
+	}
+}
+		
+public class Example2 {
+
+	public static void main(String[] args) throws IOException {
+		
+		
+		try {
+			BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+			System.out.println("Enter Player name");
+			String name=br.readLine();
+			System.out.println("Enter age");
+			int age1=Integer.parseInt(br.readLine());
+			if(age1>19)
+				throw new InvalidClassException("Age is less than 19");
+			
+		}
+		catch(InvalidClassException e) {
+			System.out.println(e);
+			
+		}
+	}
+
+}
+Output:
+Enter Player name
+Ishan Kishan
+Enter age
+18
+java.io.InvalidClassException: Age is greater than 19
+
+---------------------------------------------------------
+
+public class Example3 {
+
+	public static void main(String[] args) throws IOException, ClassNotFoundException {
+		try {
+			String team1="Chennai Super kings";
+			String team2="Deccan Chargers";
+			String team3="Delhi Daredevils";
+			String team4="Kings xi punjab";
+			String team5="Kolkata Night Riders";
+			String team6="Mumbai Indians";
+			String team7="Rajasthan rayals";
+			String team8="Royal challengers Bangalore";
+			BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+			System.out.println("Enter the expected winner team of IPL Season 4");
+			String name=br.readLine();
+			System.out.println("Enter the expected runner Team of IPL Season 4");
+			String name1=br.readLine();
+			String Winner = null;
+			if(Winner=="Chennai super kings")
+				System.out.println("Chennai super kings");
+			else
+				throw new ClassNotFoundException("winner is Chennai Super Kings");
+		}
+		finally
+		{
+			
+		}
+	
+
+	}
+
+}
+Output:
+Enter the expected winner team of IPL Season 4
+Deccan chargers
+Enter the expected runner Team of IPL Season 4
+Mumbai Indians
+ java.lang.ClassNotFoundException: winner is Chennai Super Kings
+
+
+

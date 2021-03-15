@@ -1,0 +1,425 @@
+package com.pack2;
+
+public class Eggs
+{   
+
+    int doX(Long x, Long y) { return 1;}
+
+    int doX(long... x) { return 2;}
+
+    int doX(Integer x, Integer y) { return 3; }
+
+    int doX(Number n, Number m) { return 4; }
+
+   
+
+    public static void main(String[ ] args) {
+
+        new Eggs().go();
+
+    }
+
+ 
+
+    void go() {
+
+        short s = 7;
+
+        System.out.println(doX(s,s) + " ");
+
+        System.out.println(doX(7,7));
+
+    }
+
+}
+
+output :
+4
+3
+-----------------------------------------------------------------------------
+
+package com.pack2;
+
+public class Mixer {
+	 
+	    Mixer() { }
+
+	    Mixer(Mixer m) { m1 = m; }
+
+	    Mixer m1;
+
+	    public static void main(String[ ] args) {
+
+	        Mixer m2 = new Mixer();
+
+	        Mixer m3 = new Mixer(m2);
+
+	        m3.go();
+
+	        Mixer m4 = m3.m1;
+
+	        m4.go();
+
+	        Mixer m5 = m2.m1;
+
+	        m5.go();
+
+	    }
+
+	    void go() {
+
+	        System.out.println("hi ");
+
+	    }
+
+	}
+
+output:
+hi hi, followed by an exception
+-------------------------------------------------------------------------
+package com.pack2;
+
+public class Alien {
+	
+
+	    String invade(short ships) {
+
+	        return " a few";
+
+	    }
+
+	
+	    
+	    
+}
+
+	 
+
+	class Defender {   
+
+	    public static void main(String[] args) {
+
+	        System.out.println(new Alien().invade(7));
+
+	    }
+
+	}
+Answer:
+compilation fails
+-------------------------------------------------------------------
+package com.pack2;
+
+public class Fizz {
+	 
+
+		    int x = 5;
+
+		    public static void main(String[] args) {
+
+		        final Fizz f1 = new Fizz();
+
+		        Fizz f2 = new Fizz();
+
+		        Fizz f3 = FizzSwitch(f1, f2);
+
+		        System.out.println((f1 == f3) + " " + (f1.x == f3.x));
+
+		    }
+
+		    static Fizz FizzSwitch(Fizz x, Fizz y) {
+
+		        final Fizz z = x;
+
+		        z.x = 6;
+
+		        return z;
+
+		    }
+
+		}
+
+output:
+true true
+------------------------------------------------------------------
+package com.pack2;
+
+public class Knowing {
+
+   
+
+    static final long tooth = 343L;
+
+    static long doIt(long tooth) {
+
+        System.out.print(++tooth + " ");
+
+        return ++tooth;
+
+    }   
+
+    public static void main(String[] args) {
+
+        System.out.print(tooth + " ");
+
+        final long tooth = 340L;
+
+        new Knowing().doIt(tooth);
+
+        System.out.println(tooth);
+
+    }
+
+}
+
+
+output:
+343 341 340
+------------------------------------------------------------
+class Bird{
+
+    { System.out.print("b1 "); }
+
+   
+
+    public Bird() {
+
+        System.out.print("b2 ");
+
+    }
+
+}
+
+ 
+
+class Raptor extends Bird {
+
+    static { System.out.print("r1 "); }
+
+   
+
+    public Raptor() {
+
+        System.out.print("r2 ");
+
+    }
+
+   
+
+    { System.out.print("r3 "); }
+
+   
+
+    static { System.out.print("r4 "); }
+
+}
+
+ 
+
+class Hawk extends Raptor {
+
+    public static void main(String[] args) {
+
+        System.out.print("pre ");
+
+        new Hawk();
+
+        System.out.println("hawk ");
+
+    }
+
+}
+
+:pre r1 r4 b1 b2 r3 r2 hawk
+--------------------------------------------------------------------------
+
+class Top {
+
+    public Top(String s) {
+
+        System.out.println("B");
+
+    }
+
+   
+
+    public class Bottom2 extends Top {
+
+        public Bootom2(String s) {
+
+            System.out.println("D");
+
+        }
+
+        public static void main(String[] args) {
+
+            new Bottom2("C");
+
+            System.out.println(" ");
+
+        }
+
+    }
+
+}
+
+:compilation fails
+----------------------------------------------------
+class Clidders {
+
+    public final void flipper() {
+
+        System.out.println("Clidder");
+
+    }
+
+}
+
+ 
+
+public class Clidlets  extends Clidders {
+
+    public void flipper() {
+
+        System.out.println("Flip a Clidlet");
+
+        super.flipper();
+
+    }   
+
+    public static void main(String[] args) {
+
+        new Clidlets().flipper();
+
+    }   
+
+}
+:Compilation fails.
+-------------------------------------------------
+
+class Programmer {
+
+2.     Programmer debug() { return this; }   
+
+3. }
+
+4. class SCJP extends Programmer {
+
+5.     // insert code here
+
+6.}
+
+ :
+Programmer debug() { return this; }
+----------------------------------------------------
+class Clidder {
+
+    private final void flipper() {
+
+        System.out.println("Clidder");
+
+    }
+
+}
+
+ 
+
+public class Clidlet  extends Clidder {
+
+    public final void flipper() {
+
+        System.out.println("Clidlet");
+
+    }
+
+    public static void main(String[] args) {
+
+        new Clidlet().flipper();
+
+    }   
+
+}
+output:
+Clidlet
+-----------------------------------------------------------
+Problem Statement:
+
+Given the following:
+
+  i.     interface Base {
+
+ii.         boolean m1 ();
+
+iii.         byte m2(short s);
+
+iv.     }
+
+ 
+d)  abstract class Class2 implements Base { }
+
+e)  abstract class Class2 implements Base {
+
+f)  public boolean m1 () { return (true); }  }
+------------------------------------------------------------
+
+public abstract class AbstractTest {
+
+   
+
+    public int getNum()) {
+
+        return 45;
+
+    }
+
+    public abstract class Bar {
+
+        public int getNum()) {
+
+            return 38;
+
+        }
+
+    }
+
+    public static void main()String[] args) {
+
+        AbstractTest t = new AbstractTest()) {
+
+            public int getNum()) {
+
+                return 22;
+
+            }
+
+        };
+
+        AbstractTest.Bar f = t.new Bar()) {
+
+            public int getNum()) {
+
+                return 57;
+
+            }
+
+        };
+
+        System.out.println()f.getNum()) + " " + t.getNum()));
+
+    }
+
+}
+::compilation fails
+----------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
