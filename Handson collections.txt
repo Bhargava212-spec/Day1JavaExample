@@ -1,0 +1,127 @@
+package com.practice;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Practice1 {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		List<Integer> l=new ArrayList<>();
+		System.out.println("Enter the number of games");
+		int games=sc.nextInt();
+		System.out.println("Enter the score of " + games +" games");
+		while(games>l.size())
+		{
+			l.add(sc.nextInt());
+		}
+		double total=0;
+		
+		for(Integer game:l) {
+			total+=game;
+		}
+		System.out.println(total);
+		System.out.println((total)/l.size());
+		
+	}
+
+}
+
+output:
+Enter the number of games
+5
+Enter the score of 5 games
+200
+210
+180
+176
+192
+958.0
+191.6
+==========================================================================
+package com.practice;
+
+import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class Practice2 {
+
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter the Number of Matches");
+	int m=sc.nextInt();
+	Set<Integer> s=new TreeSet<>();
+	int j;
+	System.out.println("Enter the Scores");
+	for(int i=0;i<m;i++) {
+		j=sc.nextInt();
+		s.add(j);
+	}
+	for(int a:s);
+	System.out.println(s);
+
+	}
+
+}
+output:
+Enter the Number of Matches
+6
+Enter the Scores
+101
+78
+90
+59
+77
+67
+[59, 67, 77, 78, 90, 101]
+-----------------------------------------------------------------------
+package com.practice;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class practice3 {
+
+ public static void main(String[] args) {
+      Scanner sc= new Scanner(System.in);
+      System.out.println("Enter The Number Of Stadiums");
+      int m=Integer.parseInt(sc.nextLine());
+      
+      
+       List<String> s=new ArrayList<>();
+       String j;
+       System.out.println("Enter Stadiums ");
+       
+      for(int i=0;i<m;i++)
+   {
+    j=sc.nextLine();
+    s.add(j);
+   }
+    int count=0;
+    System.out.println("Enter Venues");
+    String S=sc.nextLine();
+    for(int i=0;i<m;i++) {
+    if(s.get(i).equals(S)) {
+    count++;}
+  }
+    System.out.println(count);
+
+ }
+
+}
+output:
+Enter The Number Of Stadiums
+8
+Enter Stadiums 
+M.A Chidambaram stadium
+M.A Chidambaram stadium
+M.A Chidambaram stadium
+M.chinnaswami stadium
+M.chinnaswami stadium
+wankhade stadium
+Eden gardens
+M.A Chidambaram stadium
+Enter Venues
+M.A Chidambaram stadium
+4
