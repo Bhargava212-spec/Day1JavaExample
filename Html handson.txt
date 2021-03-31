@@ -1,0 +1,281 @@
+
+addAddress.html
+
+<!DOCTYPE html>
+<html>
+<HEAD>
+    <TITLE>Display Address</TITLE>
+    <style>
+        a{
+            text-align: center;
+        }
+    </style>
+</HEAD>
+
+<body>
+    <form action="Submitted.html">
+        <label>Name</label><br>
+        <input type="text" name="name"><br>
+
+        <label>Address</label><br>
+        <Textarea name="address"></Textarea><br>
+
+        <label>City</label><br>
+        <input type="text" name="city"><br>
+
+        <label>Postal Code</label><br>
+        <select>
+            <option value="PC1">PC1</option>
+            <option value="PC2">PC2</option>
+            <option value="PC3">PC3</option>
+        </select>
+
+        <label>TransportMode</label><br>
+        <input type="radio" name="transportmode" value="Bus"> Bus<br>
+        <input type="radio" name="transportmode" value="Car"> Car<br>
+        <input type="radio" name="transportmode" value="Cycle"> Cycle<br>
+        <input type="radio" name="transportmode" value="others"> others<br>
+
+        <label> Skillsets</label>
+        <input type="checkbox" name="skillsets"><br>
+
+        <label>Email</label><br>
+        <input type="text" name="email"><br>
+
+        <label>About Yourself</label><br>
+        <Textarea name="aboutyourself"></Textarea><br>
+
+        <input type="submit" name="submit" value="submit">
+        <input type="submit" name="reset" value="reset"><br>
+    </form>
+</body>
+
+</html> 
+---------------------------------------------------------------
+Addressbook.html
+
+<!DOCTYPE html>
+<html>
+<HEAD>
+    <TITLE>AddressBook</TITLE>
+    <style>
+        a{
+            text-align: center;
+        }
+    </style>
+</HEAD>
+
+<body>
+    <ul>
+        <li><a href="AddAddress.html">Add new address</a></li>
+        <li><a href="#">Deleting, and updating entries</a></li>
+        <li><a href="#">Searching for entries</a></li>
+    </ul>
+</body>
+
+</html> 
+-----------------------------------------------------------
+login.html
+
+<!DOCTYPE html>
+<html>
+<HEAD>
+    <TITLE>Login</TITLE>
+    <style>
+        h1{
+            text-align: center;
+        }
+    </style>
+</HEAD>
+
+<body>
+    <a href="AddressBook.html"><input type="button" value="Login" ></a>
+</body>
+
+</html> 
+---------------------------------------
+output pg
+<!DOCTYPE html>
+<html>
+<HEAD>
+    <TITLE>HTML Page</TITLE>
+    <style>
+        h3{
+            text-align: center;
+        }
+    </style>
+</HEAD>
+
+<body>
+    <h3>Your details are Submitted. Thank You!</h3>
+</body>
+
+</html> 
+--------------------------------------------
+Second.html pg
+
+<HEAD>
+    <TITLE>Second Page</TITLE>
+    <style>
+        body {
+          background-image: url("simple.png");
+        }
+    </style>
+</HEAD>
+
+<body>
+    <p>
+
+        I am Bhargava. Working as a Software Engineer. I like to read and implement new techonlogies stuff.
+        I have completed my B.Tech EEE degree in 2020.
+    </p>
+    <a href="Second.html">
+        Second.html
+    </a>
+    <ul>
+        <li><a href="#">Watching Movies</a></li>
+        <li><a href="#">Reading New Technical Stuff</a></li>
+    </ul>
+
+    <a href="https://www.google.com/0">https://www.google.com/</a>
+    <a href="https://www.msn.com/en-in">https://www.msn.com/en-in</a>
+
+    <hr style="width: 300px; height: 15px;">
+</body>
+
+</html> 
+----------------------------------------------------
+ex9 login.html
+
+<!DOCTYPE html>
+<html>
+
+<HEAD>
+    <TITLE>HTML Page</TITLE>
+</HEAD>
+
+<body>
+    <form action="Success.html">
+        <label>User ID</label><br>
+        <input type="text" name="userid"><br>
+        <label>Password</label><br>
+        <input type="password" name="password"><br><br>
+        <input type="submit" name="submit" value="submit">
+        <input type="submit" name="reset" value="reset"><br><br />
+    </form>
+    <a href="Registration.html">
+        New user Register
+    </a>
+</body>
+
+</html> 
+
+---------------------------------------
+ex9 registration.html
+
+<!DOCTYPE html>
+<html>
+
+<HEAD>
+    <TITLE>HTML Page</TITLE>
+</HEAD>
+
+<body>
+    <form action="Success.html">
+        <label>User ID</label><br>
+        <input type="text" name="userid"><br>
+
+        <label>First Name</label><br>
+        <input type="text" name="firstname"><br>
+
+        <label>Last Name</label><br>
+        <input type="text" name="lastname"><br>
+
+        <label>Address</label><br>
+        <Textarea name="address"></Textarea><br>
+
+        <label>Country</label><br>
+        <select name="country"><br>
+            <option value="india">India</option>
+            <option value="us">US</option>
+            <option value="china">China</option>
+        </select><br>
+
+        <label>Phone</label><br>
+        <input type="phone" name="phone"><br>
+
+        <label>Zip Code</label><br>
+        <input type="text" name="zipcode"><br>
+
+        <label>Gender</label><br>
+        <input type="radio" name="gender" value="male"> Male<br>
+        <input type="radio" name="gender" value="female"> Female<br>
+        <input type="radio" name="gender" value="other"> Other<br>
+
+        <input type="submit" name="submit" value="submit">
+        <input type="submit" name="reset" value="reset"><br>
+    </form>
+</body>
+
+</html> 
+---------------------------------------
+success.html
+
+<!DOCTYPE html>
+<html>
+
+
+<HEAD>
+    <TITLE>HTML Page</TITLE>
+    <style>
+        h1,
+        p {
+            text-align: center;
+        }
+    </style>
+</HEAD>
+
+<body>
+    <h1>Success</h1>
+    <p>
+        <a href="Login.html">
+            Login
+        </a>
+    </p>
+
+</body>
+
+</html>
+---------------------------------------------------------
+ex8 second.html
+
+<HEAD>
+    <TITLE>Second Page</TITLE>
+    <style>
+        body {
+          background-image: url("simple.png");
+        }
+    </style>
+</HEAD>
+
+<body>
+    <p>
+
+        I am Bhargava. Working as a Software Engineer. I like to read and implement new techonlogies stuff.
+        I have completed my B.Tech EEE degree in 2020.
+    </p>
+    <a href="Second.html">
+        Second.html
+    </a>
+    <ul>
+        <li><a href="#">Watching Movies</a></li>
+        <li><a href="#">Reading New Technical Stuff</a></li>
+    </ul>
+
+    <a href="https://www.google.com/0">https://www.google.com/</a>
+    <a href="https://www.msn.com/en-in">https://www.msn.com/en-in</a>
+
+    <hr style="width: 300px; height: 15px;">
+</body>
+
+</html> 
